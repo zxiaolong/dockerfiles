@@ -1,0 +1,12 @@
+version: '2'
+services:
+  bionic-sphinx:
+    image: "bionic-sphinx:latest"
+    container_name: "bionic-sphinx"
+    command: make -C /sphinx latexpdf html
+    network_mode: "none"
+    volumes:
+      - "/tmp/sphinx:/sphinx"
+    stdin_open: true
+    tty: true
+
